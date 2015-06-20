@@ -44,10 +44,31 @@ group :development, :test do
 end
 
 # 長いテーブルにページ送り機能をつける
+=begin
+　$ bundle install --without production
+　--withoutオプションで指定しないとダメ
+　　一回指定したら、.bundle/configファイルに指定したオプションが記録されるので、
+それ以降は--withoutオプションいらない
+=end
 gem 'kaminari'
 
 # それっぽいテストデータを作ってくれる
+=begin
+　kaminariのときに、--without productionを書いたので、
+　$ bundle install
+=end
 group :development, :test do
   gem 'faker'              # 本物っぽいテストデータの作成
   gem 'faker-japanese'     # 本物っぽいテストデータの作成（日本語対応）
+end
+
+# 現在のアソシエーションを図で見る
+=begin
+　これを書く前に$ brew install graphvizをたたいておく
+　これを書いた後に、
+　$ bundle install
+　$ rake erd を実行
+=end
+group :development do
+  gem 'rails-erd'
 end
