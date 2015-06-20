@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
+<% if @course.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@course.errors.count, "error") %>prohibited</h2>
 
+    <ul>
+    <% @course.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <p>
   <strong>Tour date:</strong>
   <%= @course.tour_date %>
