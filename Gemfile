@@ -43,3 +43,11 @@ group :development, :test do
   gem 'spring'
 end
 
+# 長いテーブルにページ送り機能をつける
+gem 'kaminari'
+
+# それっぽいテストデータを作ってくれる
+group :development, :test do
+  gem 'faker'              # 本物っぽいテストデータの作成
+  gem 'faker-japanese'     # 本物っぽいテストデータの作成（日本語対応）
+end
