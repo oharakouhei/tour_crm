@@ -52,6 +52,9 @@ end
 =end
 gem 'kaminari'
 
+# 検索機能
+gem 'ransack'
+
 # それっぽいテストデータを作ってくれる
 =begin
 　kaminariのときに、--without productionを書いたので、
