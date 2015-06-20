@@ -45,11 +45,11 @@
     <p>お客様情報が表示されます。</p>
     <table class="table table-striped">
       <thead>
-        <th>姓</th>
-        <th>名</th>
-        <th>電子メール</th>
-        <th>所属会社</th>
-        <th>役職</th>
+        <th><%= sort_link(@q, :family_name, "姓") %></th>
+        <th><%= sort_link(@q, :given_name, "名") %></th>
+        <th><%= sort_link(@q, :email, "メールアドレス") %></th>
+        <th><%= sort_link(@q, :company_name, "会社") %></th>
+        <th><%= sort_link(@q, :post_name, "役職") %></th>
         <th>リンク</th>
       </thead>
       <tbody>
