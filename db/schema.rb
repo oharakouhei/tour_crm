@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614071702) do
+ActiveRecord::Schema.define(version: 20150620011437) do
 
   create_table "courses", force: :cascade do |t|
     t.date     "tour_date"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20150614071702) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "family_name", null: false
+    t.string   "given_name",  null: false
+    t.string   "email",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "customers", ["email"], name: "index_customers_on_email", unique: true
 
   create_table "participants", force: :cascade do |t|
     t.string   "name"
