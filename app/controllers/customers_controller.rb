@@ -2,8 +2,11 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   def index
-    # ページャ機能 gem 'kaminari'
-    @customers = Customer.page(params[:page])
+    # ページャ機能のgem kaminariのみ
+    # @customers = Customer.page(params[:page])
+    # 検索機能のgem ransack+kaminari
+    @q = Customer.ransack(params[:q])
+    @customers = @q.result.page(params[:page])
   end
 
   def new
@@ -64,7 +67,8 @@ class CustomersController < ApplicationController
       :family_name,
       :given_name,
       :email,
-      :company_id
+      :company_id,
+      :post_id
     )
   end
 end
