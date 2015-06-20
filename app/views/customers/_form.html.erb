@@ -22,6 +22,10 @@
       <%= f.label :email, 'メールアドレス' %>
       <%= f.text_field :email, class: "form-control" %>
   </div>
+  <div class="form-group">
+      <%= f.label :company_id, '所属する会社' %>
+      <%= f.collection_select :company_id, companies, :id, :name, {}, { class: 'form-control' } %>
+  </div>
   <% if @customer.new_record? %>
     <input type="submit" name="commit" value="登録" class="btn btn-primary">
   <% else %>
