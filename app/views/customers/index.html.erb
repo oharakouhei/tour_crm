@@ -49,6 +49,7 @@
         <th><%= sort_link(@q, :email, "メールアドレス") %></th>
         <th><%= sort_link(@q, :company_name, "会社") %></th>
         <th><%= sort_link(@q, :post_name, "役職") %></th>
+        <th>コメント数</th>
         <th>リンク</th>
       </thead>
       <tbody>
@@ -59,6 +60,7 @@
             <td><%= customer.email %></td>
             <td><%= customer.company.name %></td>
             <td><%= customer.post.name %></td>
+            <td><%= customer.comments.count %></td>
             <td><%= link_to '詳細', customer, class: "btn btn-default btn-xs" %></td>
           </tr>
         <% end %>
