@@ -24,12 +24,11 @@
     <%# 放っておくと,自分がいるviewのcontrollerに投げるので,投げ先を変更してやる %>
     <%= form_for @comment, url: { controller: :comments, action: :create } do |f| %>
       <div class="form-group">
-        <%= f.label :body, "コメント内容" %>
-        <%= f.text_field :body, class: "form-control" %>
+        <%= f.label :body, "対応内容" %>
+        <%= f.text_area :body, class: "form-control" %>
       </div>
-      <div class="form-group">
-        <%= f.submit "送信", class: "btn btn-primary" %>
-      </div>
+      <%= f.hidden_field :customer_id, value: @customer.id %>
+      <%= f.submit "送信", class: "btn btn-primary" %>
     <% end %>
   </div> <!-- col-lg-12 ->
 </div> <!- row -->
