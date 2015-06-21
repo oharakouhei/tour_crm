@@ -24,7 +24,7 @@
     <% @customer.comments.each do |comment| %>
       <div class="media">
         <div class="media-left">
-          <% if comment.user.image_url.empty? %>
+          <% if comment.user.image_url.nil? %>
             <%= image_tag("http://placehold.jp/64x64.png", class: "media-object") %>
           <% else %>
             <%= image_tag(comment.user.image_url, class: "media-object", size: "64x64") %>
