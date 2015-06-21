@@ -69,13 +69,14 @@ group :development, :test do
   gem 'faker-japanese'     # 本物っぽいテストデータの作成（日本語対応）
 end
 
-# 現在のアソシエーションを図で見る
-=begin
-　これを書く前に$ brew install graphvizをたたいておく
-　これを書いた後に、
-　$ bundle install
-　$ rake erd を実行
-=end
+
 group :development do
+  # 現在のアソシエーションを図で見る
+  #　これを書く前に$ brew install graphvizをたたいておく
+  #　これを書いた後に、
+  #　$ bundle install
+  #　$ rake erd を実行
   gem 'rails-erd'
+
+  gem 'annotate'
 end
