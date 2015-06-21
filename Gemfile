@@ -55,6 +55,10 @@ gem 'kaminari'
 # 検索機能
 gem 'ransack'
 
+# ログイン用
+gem 'devise'
+
+
 # それっぽいテストデータを作ってくれる
 =begin
 　kaminariのときに、--without productionを書いたので、
