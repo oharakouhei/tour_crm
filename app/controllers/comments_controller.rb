@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
         params.require(:comment).permit(
             :body,
             :customer_id,
+            :user_id,
         )
     end
 end

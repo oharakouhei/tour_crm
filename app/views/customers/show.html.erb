@@ -45,6 +45,7 @@
         <%= f.text_area :body, class: "form-control" %>
       </div>
       <%= f.hidden_field :customer_id, value: @customer.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit "送信", class: "btn btn-primary" %>
     <% end %>
   </div> <!-- col-lg-12 ->
